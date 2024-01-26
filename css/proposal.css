@@ -1,3 +1,8 @@
+* {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
 nav, h1, h2, h3, h4, h5, h6 {
     color: #51289e;
     font-family: 'Single Day', Arial;
@@ -19,4 +24,8 @@ nav {
 nav > p {
     color: #7d5abf;
     font-family: sans-serif;
+}
+
+p {
+    font-family: 'Karla', Arial;
 }
