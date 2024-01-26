@@ -29,3 +29,7 @@ nav > p {
 p {
     font-family: 'Karla', Arial;
 }
+
+a[href] {
+    color: #8956b0;
+}
