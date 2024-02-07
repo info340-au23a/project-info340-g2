@@ -15,6 +15,23 @@
                 <h1>&#10024;Husky Study Scout&#10024;</h1>
                 <p>Scouting study dens, for Huskies by Huskies &#128062;</p>
             </nav>
+
+            <form>
+                <label for="space-name">Space Name:</label><br>
+                <input type="text" id="space-name" name="space-name"><br>
+
+                <label for="yn-wifi">Does the space have wifi?</label><br>
+                <input type="radio" id="yes-wifi" name="yn-wifi" value="yes">
+                <label for="yes-wifi">yes</label>
+                <input type="radio" id="no-wifi" name="yn-wifi" value="no">
+                <label for="no-wifi">no</label><br>
+                
+                <label for="wifi-rating">If so, please rank the wifi quality on a scale 
+                    from 0-5, where 0 is the worst and 5 is the best.</label><br>
+                <input type="text" id="wifi-rating" name="wifi-rating"><br>
+                
+                <input type="submit" value="Submit">
+            </form>
     </body>
     </main>
 </html>
