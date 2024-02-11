@@ -14,11 +14,12 @@ h1 {
 
 nav {
     background-color: #dcbdf2;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     line-height: 0.5rem;
-    text-align: center;
+    text-align: left;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 nav > p {
@@ -32,4 +33,46 @@ p {
 
 a[href] {
     color: #8956b0;
+}
+
+.search-container {
+    background-color: #dcbdf2;
+    border-radius: 25px;
+    padding: 20px; 
+    width: 50%; 
+    margin: 0 auto; 
+    margin-top: 4rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+h2 {
+    padding-top: 6px;
+}
+
+nav img {
+    position: absolute; 
+    top: 1.5rem; 
+    right: 3.8rem;
+}
+
+p#PawsText {
+    position: absolute;
+    right: 3rem;
+    top: 4.2rem;
 }
