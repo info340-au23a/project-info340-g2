@@ -66,15 +66,27 @@ h2 {
     padding-top: 6px;
 }
 
-nav img {
+img.paw {
     position: absolute; 
     top: 1.5rem; 
     right: 3.8rem;
 }
 
+img.rate {
+    position: absolute; 
+    top: 1.5rem; 
+    right: 12rem;
+}
+
 p#PawsText {
     position: absolute;
     right: 3rem;
+    top: 4.2rem;
+}
+
+p#RateText {
+    position: absolute;
+    right: 12.8rem;
     top: 4.2rem;
 }
 
