@@ -58,10 +58,22 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-nav img {
+
+
+h2 {
+    padding-top: 6px;
+}
+
+img.paw {
     position: absolute; 
     top: 1.5rem; 
     right: 2.5rem;
+}
+
+img.rate {
+    position: absolute; 
+    top: 1.5rem; 
+    right: 12rem;
 }
 
 p#PawsText {
@@ -69,6 +81,12 @@ p#PawsText {
     right: 2.5rem;
     top: 4.2rem;
     font-size: 0.75rem;
+}
+
+p#RateText {
+    position: absolute;
+    right: 12.8rem;
+    top: 4.2rem;
 }
 
 .main-container {
