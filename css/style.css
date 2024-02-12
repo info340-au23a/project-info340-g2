@@ -9,10 +9,6 @@ nav, h1, h2, h3, h4, h5, h6 {
     font-family: 'Single Day', Arial;
 }
 
-h1 {
-    font-size: 2rem;
-}
-
 nav {
     background-color: #dcbdf2;
     padding-top: .5rem;
@@ -42,13 +38,14 @@ a[href] {
     padding: 20px; 
     width: 50%; 
     margin: 0 auto; 
-    margin-top: 4rem;
+    margin-top: 2rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     margin-top: 0;
     text-align: center;
+    padding-top: 6px;
 }
 
 input[type="text"] {
@@ -62,6 +59,7 @@ input[type="text"] {
 }
 
 
+
 h2 {
     padding-top: 6px;
 }
@@ -69,7 +67,7 @@ h2 {
 img.paw {
     position: absolute; 
     top: 1.5rem; 
-    right: 3.8rem;
+    right: 2.5rem;
 }
 
 img.rate {
@@ -80,8 +78,9 @@ img.rate {
 
 p#PawsText {
     position: absolute;
-    right: 3rem;
+    right: 2.5rem;
     top: 4.2rem;
+    font-size: 0.75rem;
 }
 
 p#RateText {
@@ -133,34 +132,84 @@ p#RateText {
 table {
     border-collapse: collapse;
     width: 100%;
-    
-  }
+}
   
-  td {
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
     position: relative;
-  }
-  
-  img {
+}
+
+img {
     max-width: 50%;
     height: auto;
-
-  }
+}
   
-  .button-container {
+.button-container {
     position: absolute;
     top: 50%;
     right: 8px;
     transform: translateY(-50%);
-  }
+}
   
-  .button {
+.button {
     padding: 8px 16px;
     background-color: #b68fd6;
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
+
+@media (min-width: 100px){
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+@media (min-width: 768px){
+    h1 {
+        font-size: 2rem;
+    } 
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p#PawsText {
+        font-size: 1rem;
+    }
+
+    nav img {
+        right: 3rem;
+    }
+
+    .search-container{
+        margin-top: 3rem;
+    }
+}
+@media (min-width: 992px){
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+
+    p#PawsText {
+        font-size: 1.5rem;
+    }
+
+    nav img {
+        right: 3.8rem;
+    }
+
+    .search-container{
+        margin-top: 4rem;
+    }
+}

@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Single+Day&family=Karla&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="author" content="Krista Yamamoto-Chin, Ira Mangipudi, Jessica Do, Lydia Sorbo">
+    <meta name="description" content="This is our Project Draft!">
+    <title>Project Draft 1: Husky Study Scout</title>
+</head>
+<body>
+    <nav>
+        <h1>Husky Study Scout</h1>
+        <p>Scouting study dens, for Huskies by Huskies &#128062;</p>
+        <p id="PawsText">Pawsibilities</p>
+        <img src="img/huskyPaw.png" width="60" height="60">
+    </nav>
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Single+Day&family=Karla&display=swap">
@@ -14,76 +30,101 @@
                 <h1>Husky Study Scout</h1>
                 <p>Scouting study dens, for Huskies by Huskies &#128062;</p>
                 <a href="pawsibilities.html">
+
                     <p id="PawsText">Pawsibilities</p>
                     <img class="paw" src="img/huskyPaw.png" width="60" hieght="60">
                 </a>
                 <a href="rating.html">
                     <p id="RateText">Rate</p>
                     <img class="rate" src="img/ratingIcon.png" width="60" height="60">
+                <p id="PawsText">Pawsibilities</p>
+
+                <img src="img/huskyPaw.png" width="60" height="60">
                 </a>
             </nav>
 
-            <div class="search-container">
-                <h2>Study Spot Search</h2>
-                <input type="text" placeholder="Search...">
-            </div>            
+    <div class="search-container">
+        <h2>Study Spot Search</h2>
+        <input type="text" placeholder="Search...">
+    </div>            
 
-            <div class="main-container">
-                <div class="card">
-                    <figure class="image">
-                        <img src="img/suzzallo.jpg" alt="The inside of a library"/>
-                    </figure>
-                    <div class="content">
-                        <h1 class="card-title">Suzzallo Library</h1>
-                        <p class="description">This is the perfect place if you are looking for a quiet space to study. 
-                            It has valuted ceilings and glass-paned windows which provide good lighnting and resembles Hogwarts as well.
-                        </p>
-                        <h3>Wifi Rating</h3>
-                        <p>It has wifi but limited: 4/5 Paws</p>
-                        <h3>Outlet Spaces</h3>
-                        <p>It has outlet spaces but limited: 3/5 Paws</p>
-                        <h3>Noise Rating</h3>
-                        <p>5/5 Paws</p>
-                    </div>
-                </div>
+    <div class="main-container">
+        <div class="row">
 
-                <div class="cardtwo">
-                    <figure class="image">
-                        <img src="img/pop_health.jpg" alt="The inside of the pop health building"/>
-                    </figure>
+            <!-- Card 1 -->
+            <div class="col-md-6 col-xl-3 d-flex">
+                <div class="card mb-4">
                     <div class="content">
-                        <h1 class="card-title">Pop Health Building</h1>
-                        <p class="description"> There are multiple floors that you can study at Pop Health. 
-                            It has a multiude of windows which can give you a view of the city and various seating such as 
-                            couches, chairs, and more.
-                        </p>
-                        <h3>Wifi Rating</h3>
-                        <p>It has wifi: 5/5 Paws</p>
-                        <h3>Outlet Spaces</h3>
-                        <p>It has outlet spaces but limited: 3/5 Paws</p>
-                        <h3>Noise Rating</h3>
-                        <p>3/5 Paws</p>
-                    </div>
-                </div>
-
-                <div class="cardthree">
-                    <figure class="image">
-                        <img src="img/cafe-on-the-ave.jpg" alt="The outside of cafe on the ave"/>
-                    </figure>
-                    <div class="content">
-                        <h1 class="card-title">Cafe on the Ave</h1>
-                        <p class="description"> If you like to have background noise and want a place to grab a bite, this is the place for you.
-                            It offers various drinks and food that you can pick and it is in walking distance of campus.
-                        </p>
-                        <h3>Wifi Rating</h3>
-                        <p>It has wifi but limited: 3/5 Paws</p>
-                        <h3>Outlet Spaces</h3>
-                        <p>It has outlet spaces but limited: 2/5 Paws</p>
-                        <h3>Noise Rating</h3>
-                        <p>2/5 Paws</p>
+                        <div class="col-sm-auto col-xl-12">
+                            <img src="img/suzzallo.jpg" alt="The inside of a library"/>
+                        </div>
+                        <div class="col-sm">
+                            <h1 class="card-title">Suzzallo Library</h1>
+                            <p class="description">This is the perfect place if you are looking for a quiet space to study. 
+                                It has vaulted ceilings and glass-paned windows which provide good lighting and resembles Hogwarts as well.
+                            </p>
+                            <h3>Wifi Rating</h3>
+                            <p>It has wifi but limited: 4/5 Paws</p>
+                            <h3>Outlet Spaces</h3>
+                            <p>It has outlet spaces but limited: 3/5 Paws</p>
+                            <h3>Noise Rating</h3>
+                            <p>5/5 Paws</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-6 col-xl-3 d-flex">
+                <div class="card mb-4">
+                    <div class="content">
+                        <div class="col-sm-auto col-xl-12">
+                            <img src="img/pop_health.jpg" alt="The inside of the pop health building"/>
+                        </div>
+                        <div class="col-sm">
+                            <h1 class="card-title">Pop Health Building</h1>
+                            <p class="description">There are multiple floors that you can study at Pop Health. 
+                                It has a multitude of windows which can give you a view of the city and various seating such as 
+                                couches, chairs, and more.
+                            </p>
+                            <h3>Wifi Rating</h3>
+                            <p>It has wifi: 5/5 Paws</p>
+                            <h3>Outlet Spaces</h3>
+                            <p>It has outlet spaces but limited: 3/5 Paws</p>
+                            <h3>Noise Rating</h3>
+                            <p>3/5 Paws</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-6 col-xl-3 d-flex">
+                <div class="card mb-4">
+                    <div class="content">
+                        <div class="col-sm-auto col-xl-12">
+                            <img src="img/cafe-on-the-ave.jpg" alt="The outside of cafe on the ave"/>
+                        </div>
+                        <div class="col-sm">
+                            <h1 class="card-title">Cafe on the Ave</h1>
+                            <p class="description">If you like to have background noise and want a place to grab a bite, this is the place for you.
+                                It offers various drinks and food that you can pick, and it is in walking distance of campus.
+                            </p>
+                            <h3>Wifi Rating</h3>
+                            <p>It has wifi but limited: 3/5 Paws</p>
+                            <h3>Outlet Spaces</h3>
+                            <p>It has outlet spaces but limited: 2/5 Paws</p>
+                            <h3>Noise Rating</h3>
+                            <p>2/5 Paws</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </body>
     </main>
+
+        </div>
+    </div>
+</body>
 </html>
