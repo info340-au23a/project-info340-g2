@@ -178,9 +178,6 @@ img {
 }
 
 .image img {
-    top: -30px;
-    left: 50%;
-    margin-left: -30px;
     width: 60px;
     height: 60px;
 }
