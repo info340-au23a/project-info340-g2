@@ -104,13 +104,21 @@ img {
     cursor: pointer;
 }
 
-@media (min-width: 100px){
+@media (min-width: 0px){
     h1 {
         font-size: 1.5rem;
     }
     
     h2 {
         font-size: 1.25rem;
+    }
+
+    p#PawsText {
+        display: hidden;
+    }
+
+    p#RateText {
+        display: hidden;
     }
 }
 @media (min-width: 768px){
@@ -123,6 +131,10 @@ img {
     }
 
     p#PawsText {
+        font-size: 1rem;
+    }
+
+    p#RateText {
         font-size: 1rem;
     }
 
@@ -144,6 +156,10 @@ img {
     }
 
     p#PawsText {
+        font-size: 1.5rem;
+    }
+
+    p#RateText {
         font-size: 1.5rem;
     }
 
