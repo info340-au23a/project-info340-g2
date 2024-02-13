@@ -58,22 +58,10 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-
-
-h2 {
-    padding-top: 6px;
-}
-
-img.paw {
+nav img {
     position: absolute; 
     top: 1.5rem; 
     right: 2.5rem;
-}
-
-img.rate {
-    position: absolute; 
-    top: 1.5rem; 
-    right: 12rem;
 }
 
 p#PawsText {
@@ -83,52 +71,6 @@ p#PawsText {
     font-size: 0.75rem;
 }
 
-p#RateText {
-    position: absolute;
-    right: 12.8rem;
-    top: 4.2rem;
-}
-
-.main-container {
-    margin: 2rem auto;
-    max-width: calc(100% - 80px);
-}
-
-.card-image {
-    margin: 0;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-}
-
-.cardtwo-image {
-    margin: 0;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-}
-
-.cardthree-image {
-    margin: 0;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-}
-
-.card {
-    background: white;
-    border-radius: 20px;
-}
-
-.cardtwo {
-    background: white;
-    border-radius: 20px;
-}
-
-.cardthree {
-    background: white;
-    border-radius: 20px;
-}
 table {
     border-collapse: collapse;
     width: 100%;
@@ -228,4 +170,17 @@ img {
     .search-container{
         margin-top: 4rem;
     }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.image img {
+    top: -30px;
+    left: 50%;
+    margin-left: -30px;
+    width: 60px;
+    height: 60px;
 }
