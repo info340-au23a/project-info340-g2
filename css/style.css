@@ -48,7 +48,7 @@ h2 {
     padding-top: 6px;
 }
 
-input[type="text"] {
+.search-container input[type="text"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -58,18 +58,24 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-nav img {
+/* nav img .rate {
     position: absolute; 
     top: 1.5rem; 
-    right: 2.5rem;
+    right: 1rem;
 }
 
-p#PawsText {
+nav img .paw {
+    position: absolute; 
+    top: 1.5rem; 
+    right: 2rem;
+} */
+
+/* p#PawsText {
     position: absolute;
     right: 2.5rem;
     top: 4.2rem;
     font-size: 0.75rem;
-}
+} */
 
 table {
     border-collapse: collapse;
@@ -138,9 +144,9 @@ img {
         font-size: 1rem;
     }
 
-    nav img {
+    /* nav img .rate {
         right: 3rem;
-    }
+    } */
 
     .search-container{
         margin-top: 3rem;
