@@ -1,0 +1,183 @@
+* {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+
+nav, h1, h2, h3, h4, h5, h6 {
+    color: #51289e;
+    font-family: 'Single Day', Arial;
+}
+
+nav {
+    background-color: #dcbdf2;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    line-height: 0.5rem;
+    text-align: left;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+nav > p {
+    color: #7d5abf;
+    font-family: sans-serif;
+}
+
+p {
+    font-family: 'Karla', Arial;
+}
+
+a[href] {
+    color: #8956b0;
+}
+
+.search-container {
+    background-color: #dcbdf2;
+    border-radius: 25px;
+    padding: 20px; 
+    width: 50%; 
+    margin: 0 auto; 
+    margin-top: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+    padding-top: 6px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+nav img {
+    position: absolute; 
+    top: 1.5rem; 
+    right: 2.5rem;
+}
+
+p#PawsText {
+    position: absolute;
+    right: 2.5rem;
+    top: 4.2rem;
+    font-size: 0.75rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    position: relative;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+  
+.button-container {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+}
+  
+.button {
+    padding: 8px 16px;
+    background-color: #b68fd6;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (min-width: 0px){
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p#PawsText {
+        display: hidden;
+    }
+
+    p#RateText {
+        display: hidden;
+    }
+}
+@media (min-width: 768px){
+    h1 {
+        font-size: 2rem;
+    } 
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p#PawsText {
+        font-size: 1rem;
+    }
+
+    p#RateText {
+        font-size: 1rem;
+    }
+
+    nav img {
+        right: 3rem;
+    }
+
+    .search-container{
+        margin-top: 3rem;
+    }
+}
+@media (min-width: 992px){
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+
+    p#PawsText {
+        font-size: 1.5rem;
+    }
+
+    p#RateText {
+        font-size: 1.5rem;
+    }
+
+    nav img {
+        right: 3.8rem;
+    }
+
+    .search-container{
+        margin-top: 4rem;
+    }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.image img {
+    width: 60px;
+    height: 60px;
+}

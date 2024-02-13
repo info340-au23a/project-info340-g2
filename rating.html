@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Single+Day&family=Karla&display=swap">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="author" content="Krista Yamamoto-Chin">
+        <meta name="description" content="This is the page that will allow users to 
+                                        contribute to our site by rating and reviewing study spaces!">
+        <title>Project Draft 1: Husky Study Scout</title>
+    </head>
+    <main>
+        <body>
+            <nav>
+                <h1>Husky Study Scout</h1>
+                <p>Scouting study dens, for Huskies by Huskies &#128062;</p>
+                <a href="pawsibilities.html">
+                    <p id="PawsText">Pawsibilities</p>
+                    <img class="paw" src="img/huskyPaw.png" width="60" hieght="60">
+                </a>
+                <a href="rating.html">
+                    <p id="RateText">Rate</p>
+                    <img class="rate" src="img/ratingIcon.png" width="60" height="60">
+                </a>
+            </nav>
+
+            <form>
+                <label for="space-name">Space Name:</label><br>
+                <input type="text" id="space-name" name="space-name"><br><br>
+
+                <label for="yn-wifi">Does the space have wifi?</label><br>
+                <input type="radio" id="yes-wifi" name="yn-wifi" value="yes">
+                <label for="yes-wifi">yes</label>
+                <input type="radio" id="no-wifi" name="yn-wifi" value="no">
+                <label for="no-wifi">no</label><br>
+                <label for="wifi-rating">If so, please rank the wifi quality on a scale 
+                    from 0-5, where 0 is the worst and 5 is the best.</label><br>
+                <input type="text" id="wifi-rating" name="wifi-rating"><br><br>
+
+                <label for="yn-outlet">Does the space have outlets?</label><br>
+                <input type="radio" id="yes-outlet" name="yn-outlet" value="yes">
+                <label for="yes-outlet">yes</label>
+                <input type="radio" id="no-outlet" name="yn-outlet" value="no">
+                <label for="no-outlet">no</label><br>
+                <label for="outlet-rating">If so, please rank the outlit availability and quality on a scale 
+                    from 0-5, where 0 is the worst and 5 is the best.</label><br>
+                <input type="text" id="outlet-rating" name="outlet-rating"><br><br>
+
+                <label for="noise-rating">Finally, please rank the noise level of the space on a scale 
+                    from 0-5, where 0 is the worst and 5 is the best.</label><br>
+                <input type="text" id="noise-rating" name="noise-rating"><br><br>
+
+                <input type="submit" value="Submit"><br><br>
+            </form>
+
+            <a href="index.html">
+                <button>Click here to go back to the Homepage!</button>
+            </a>
+    </body>
+    </main>
+</html>
