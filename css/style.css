@@ -11,7 +11,7 @@ nav, h1, h2, h3, h4, h5, h6 {
 
 nav {
     background-color: #dcbdf2;
-    padding-top: .5rem;
+    /* padding-top: .5rem; */
     padding-bottom: .5rem;
     line-height: 0.5rem;
     text-align: left;
@@ -115,6 +115,11 @@ img {
         font-size: 1.5rem;
     }
     
+    .home {
+        width: 2rem;
+        height: 2rem;
+    }
+
     h2 {
         font-size: 1.25rem;
     }
@@ -132,6 +137,11 @@ img {
         font-size: 2rem;
     } 
     
+    .home {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
     h2 {
         font-size: 1.5rem;
     }
@@ -155,6 +165,11 @@ img {
 @media (min-width: 992px){
     h1 {
         font-size: 3rem;
+    }
+
+    .home {
+        width: 2rem;
+        height: 2rem;
     }
     
     h2 {
