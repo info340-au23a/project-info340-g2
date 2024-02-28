@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Suzzallo Library",
+        "description": "This is the perfect place if you are looking for a quiet space to study. It has vaulted ceilings and glass-paned windows which provide good lighting and resembles Hogwarts as well.",
+        "wifi_rating": "It has strong wifi: 5/5 Paws",
+        "outlet_spaces": "It has outlet spaces but limited: 3/5 Paws",
+        "noise_rating": "5/5 Paws"
+    },
+    {
+        "name": "Pop Health Building",
+        "description": "There are multiple floors that you can study at Pop Health. It has a multitude of windows which can give you a view of the city and various seating such as couches, chairs, and more.",
+        "wifi_rating": "It has strong wifi: 5/5 Paws",
+        "outlet_spaces": "It has outlet spaces but limited: 3/5 Paws",
+        "noise_rating": "3/5 Paws"
+    },
+    {
+        "name": "Cafe on the Ave",
+        "description": "If you like to have background noise and want a place to grab a bite, this is the place for you. It offers various drinks and food that you can pick, and it is in walking distance of campus.",
+        "wifi_rating": "It has wifi but limited: 3/5 Paws",
+        "outlet_spaces": "It has outlet spaces but limited: 3/5 Paws",
+        "noise_rating": "3/5 Paws"
+    },
+    {
+        "name": "Sip House",
+        "description": "Want an aesthetic place to study? Look no further than Sip House, located at the top of the Ave and its delicious drinks.",
+        "wifi_rating": "It has good wifi: 4/5 Paws",
+        "outlet_spaces": "It has outlet: 4/5 Paws",
+        "noise_rating": "3/5 Paws"
+    },
+    {
+        "name": "Mary Gates Hall",
+        "description": "An open space for students to study, you can find additional tutoring support in this area as well!",
+        "wifi_rating": "It has strong wifi: 5/5 Paws",
+        "outlet_spaces": "It has very limited outlets: 2/5 Paws",
+        "noise_rating": "4/5 Paws"
+    }
+]
