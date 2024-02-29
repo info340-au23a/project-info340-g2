@@ -3,18 +3,6 @@ import React from 'react';
 function Rating() {
   return (
     <main>
-      <nav>
-        <h1>Husky Study Scout</h1>
-        <p>Scouting study dens, for Huskies by Huskies &#128062;</p>
-        <a href="pawsibilities.html">
-          <p id="PawsText">Pawsibilities</p>
-          <img className="paw" src="img/huskyPaw.png" width="60" height="60" alt="Paw Icon" />
-        </a>
-        <a href="rating.html">
-          <p id="RateText">Rate</p>
-          <img className="rate" src="img/ratingIcon.png" width="60" height="60" alt="Rating Icon" />
-        </a>
-      </nav>
 
       <form>
         <label htmlFor="space-name">Space Name:</label><br />
