@@ -11,16 +11,16 @@ nav, h1, h2, h3, h4, h5, h6 {
 
 nav {
     background-color: #dcbdf2;
-    /* padding-top: .5rem; */
-    padding-bottom: .5rem;
-    line-height: 0.5rem;
-    text-align: left;
     border-radius: 25px;
-    overflow: hidden;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
 nav > p {
-    color: #7d5abf;
+    color: #51289e;
     font-family: sans-serif;
 }
 
@@ -28,8 +28,51 @@ p {
     font-family: 'Karla', Arial;
 }
 
+nav a {
+    text-decoration: none;
+}
+
+nav > div {
+    display: flex;
+}
+
+nav > div:nth-child(1) {
+    flex-direction: column;
+}
+
+nav > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+}
+
+nav > div:nth-child(2) .nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+nav .paw:hover,
+nav .star:hover, nav a:hover {
+    color: #bd81f1;
+}
+
 a[href] {
-    color: #8956b0;
+    color: #51289e;
+}
+
+.pawButton,
+.rateButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.navIcons {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 .search-container {
@@ -58,28 +101,15 @@ h2 {
     box-sizing: border-box;
 }
 
-/* nav img .rate {
-    position: absolute; 
-    top: 1.5rem; 
-    right: 1rem;
-}
-
-nav img .paw {
-    position: absolute; 
-    top: 1.5rem; 
-    right: 2rem;
-} */
-
-/* p#PawsText {
-    position: absolute;
-    right: 2.5rem;
-    top: 4.2rem;
-    font-size: 0.75rem;
-} */
-
 table {
     border-collapse: collapse;
     width: 100%;
+}
+
+h1 {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 1.5rem;
 }
   
 td {
