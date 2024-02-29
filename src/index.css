@@ -51,8 +51,7 @@ nav > div:nth-child(2) .nav-link {
     text-decoration: none;
 }
 
-nav .paw:hover,
-nav .star:hover, nav a:hover {
+nav a:hover {
     color: #bd81f1;
 }
 
@@ -61,7 +60,7 @@ a[href] {
 }
 
 .pawButton,
-.rateButton {
+.rateButton, .homeButton {
     display: flex;
     flex-direction: column;
     align-items: center;
