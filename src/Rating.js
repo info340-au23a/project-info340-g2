@@ -32,10 +32,6 @@ function Rating() {
 
         <input type="submit" value="Submit" /><br /><br />
       </form>
-
-      <a href="index.html">
-        <button>Click here to go back to the Homepage!</button>
-      </a>
     </main>
   );
 }

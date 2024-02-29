@@ -31,13 +31,6 @@ function Pawsibilities() {
           </tr>
         </tbody>
       </table>
-
-      <a href="index.html">
-        <button>Click here to go back to the Homepage!</button>
-      </a>
-      <footer>
-        <p>&copy; Krista Yamamoto-Chin, Ira Mangipudi, Jessica Do, Lydia Sorbo & INFO 340</p>
-      </footer>
     </main>
   );
 }
