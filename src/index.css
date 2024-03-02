@@ -77,27 +77,45 @@ a[href] {
 .search-container {
     background-color: #dcbdf2;
     border-radius: 25px;
-    padding: 20px; 
-    width: 50%; 
-    margin: 0 auto; 
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
     margin-top: 2rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Display children in a column */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text inside the container */
 }
 
 h2 {
     margin-top: 0;
-    text-align: center;
     padding-top: 6px;
 }
 
-.search-container input[type="text"] {
+.search-bar {
+    display: flex; /* Display input and button next to each other */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
     width: 100%;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
     padding: 10px;
     border: none;
     border-radius: 20px;
     outline: none;
     font-size: 16px;
     box-sizing: border-box;
+    margin-right: 5px; /* Add margin between input and button */
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #51289e;
 }
 
 table {

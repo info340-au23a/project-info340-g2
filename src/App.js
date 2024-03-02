@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from './Home';
 import NavBar from './NavBar';
 import Pawsibilities from './Pawsibilities';
@@ -12,6 +12,7 @@ const App = () => {
                 <NavBar />
                 <main>
                     <Routes>
+                        <Route path="/" element={<Navigate to="/home" />} />
                         <Route path="/home" element={<Home />}/>
                         <Route path="/pawsibilities" element={<Pawsibilities />} />
                         <Route path="/rating" element={<Rating/>} />
