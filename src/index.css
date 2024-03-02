@@ -59,19 +59,11 @@ a[href] {
     color: #51289e;
 }
 
-.pawButton,
-.rateButton, .homeButton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
 .navIcons {
     display: flex;
     align-items: center;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .search-container {
@@ -81,11 +73,12 @@ a[href] {
     width: 50%;
     margin: 0 auto;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Display children in a column */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text inside the container */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
 }
 
 h2 {
@@ -94,9 +87,9 @@ h2 {
 }
 
 .search-bar {
-    display: flex; /* Display input and button next to each other */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     width: 100%;
 }
 
@@ -108,7 +101,7 @@ h2 {
     outline: none;
     font-size: 16px;
     box-sizing: border-box;
-    margin-right: 5px; /* Add margin between input and button */
+    margin-right: 5px;
 }
 
 .search-bar button {
@@ -117,6 +110,28 @@ h2 {
     cursor: pointer;
     color: #51289e;
 }
+
+.search-bar button:hover {
+    color: #bd81f1;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-container h3 {
+    margin-right: 1rem; /* Adjust spacing between text and checkboxes */
+  }
+  
+  .filter-options {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-options label {
+    margin-right: 1rem; /* Adjust spacing between checkboxes */
+  }
 
 table {
     border-collapse: collapse;
@@ -157,14 +172,18 @@ img {
     cursor: pointer;
 }
 
+.filter-container label {
+    color: #51289e;
+    font-family: 'Single Day', Arial;
+}
+
+.filter-container {
+    margin-top: 1.5rem;
+}
+
 @media (min-width: 0px){
     h1 {
         font-size: 1.5rem;
-    }
-    
-    .home {
-        width: 2rem;
-        height: 2rem;
     }
 
     h2 {
@@ -178,16 +197,15 @@ img {
     p#RateText {
         display: hidden;
     }
+
+    p#HomeText {
+        display: hidden;
+    }
 }
 @media (min-width: 768px){
     h1 {
         font-size: 2rem;
     } 
-    
-    .home {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
 
     h2 {
         font-size: 1.5rem;
@@ -198,6 +216,10 @@ img {
     }
 
     p#RateText {
+        font-size: 1rem;
+    }
+
+    p#HomeText {
         font-size: 1rem;
     }
 
@@ -213,11 +235,6 @@ img {
     h1 {
         font-size: 3rem;
     }
-
-    .home {
-        width: 2rem;
-        height: 2rem;
-    }
     
     h2 {
         font-size: 2rem;
@@ -228,6 +245,10 @@ img {
     }
 
     p#RateText {
+        font-size: 1.5rem;
+    }
+
+    p#HomeText {
         font-size: 1.5rem;
     }
 
