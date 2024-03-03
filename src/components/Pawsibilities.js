@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 //import Popup from './Popup';
 
 function Pawsibilities({pawsibilities, markAsVisited}) { 
