@@ -63,6 +63,7 @@ function Home({ studySpaces, addToPawsibilities}) {
                             <StudySpotCard
                                 key={index}
                                 spot={spot}
+                                image={spot.image}
                                 name={spot.name}
                                 description={spot.description}
                                 wifiRating={spot.wifi_rating}
