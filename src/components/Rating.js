@@ -7,7 +7,6 @@ function Rating() {
   const [wifiRating, setWifiRating] = useState('');
   const [outletRating, setOutletRating] = useState('');
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [picture, setPicture] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,14 +14,12 @@ function Rating() {
   };
 
   const handleConfirmation = () => {
-    <p>Submitted!</p>
     // Reset the form after submission
     setName('');
     setYNWifi('');
     setYNOutlet('');
     setWifiRating('');
     setOutletRating('');
-    setPicture(null);
     
     setShowConfirmation(false); // hide confirmation message after confirmed
   }
@@ -57,7 +54,7 @@ function Rating() {
         <br />
         {ynWifi === 'yes' && (
           <label>
-            Please rank the reliability of the wifi on a scale from 1-5 paws:
+            Rating:
             <input
               type="number"
               min="1"
@@ -99,15 +96,6 @@ function Rating() {
         )}
         <br />
         <br />
-        <label>
-          Upload Picture (if you have):
-          <input
-            type="file"
-            onChange={(event) => setPicture(event.target.files[0])}
-            accept="image/*"
-          />
-        </label>
-        <br />
         <button type="submit">Submit</button>
       </form>
 
@@ -115,16 +103,9 @@ function Rating() {
         <div>
           <p>Study Space Name: {name}</p>
           <p>Wifi?: {ynWifi}</p>
-          {ynWifi === 'yes' && <p>Rating: {wifiRating}/5</p>}
+          {ynWifi === 'yes' && <p>Rating: {wifiRating}</p>}
           <p>Outlets?: {ynOutlet}</p>
-          {ynOutlet === 'yes' && <p>Rating: {outletRating}/5</p>}
-          <p>Picture:</p>
-          {picture && (
-            <div>
-              <img src={URL.createObjectURL(picture)} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '200px' }} />
-            </div>
-          )}
-          <p>{picture ? picture.name : 'No picture uploaded'}</p>
+          {ynOutlet === 'yes' && <p>Rating: {outletRating}</p>}
           <p>Is this information correct?</p>
           <button onClick={handleConfirmation}>Confirm</button>
         </div>

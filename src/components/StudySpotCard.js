@@ -1,6 +1,10 @@
 import React from 'react';
 
-function StudySpotCard({ spot }) {
+function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton }) {
+  function handleAddToPawsibilities() {
+    addToPawsibilities(spot);
+  };
+  
   return (
     <div className="card">
       {/* <div className="image">
@@ -15,6 +19,8 @@ function StudySpotCard({ spot }) {
         <p>{spot.outlet_spaces}</p>
         <h3>Noise Rating</h3>
         <p>{spot.noise_rating}</p>
+        <button onClick={handleAddToPawsibilities}>Add to Pawsibilities</button>
+        {showButton && <button onClick={() => markAsVisited(spot.id)}>Mark as Visited</button>}
       </div>
     </div>
   );

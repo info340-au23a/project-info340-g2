@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 import StudySpotCard from './StudySpotCard';
 import studySpacesData from './data/study-spaces-2024.json';
 
-function Home() {
+function Home({ studySpaces, addToPawsibilities}) {
     const [searchTerm, setSearchTerm] = useState('');
     const [filters, setFilters] = useState({
         wifi: false,
@@ -52,6 +52,7 @@ function Home() {
 
     const filteredStudySpots = filterStudySpots(studySpacesData);
 
+
     return (
         <div className="App">
             <main>
@@ -67,6 +68,7 @@ function Home() {
                                 wifiRating={spot.wifi_rating}
                                 outletSpaces={spot.outlet_spaces}
                                 noiseRating={spot.noise_rating}
+                                addToPawsibilities={addToPawsibilities}
                             />
                         ))}
                     </div>
