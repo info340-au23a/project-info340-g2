@@ -1,3 +1,4 @@
+
 [
     {
       "name": "Suzzallo Library",
@@ -5,7 +6,7 @@
       "wifi_rating": "It has strong wifi: 5/5 Paws",
       "outlet_spaces": "It has outlet spaces but limited: 3/5 Paws",
       "noise_rating": "4.5/5 Paws",
-      "image": "src/img/suzzallo.jpg"
+      "image": "../img/suzzallo.jpg"
     },
     {
       "name": "Pop Health Building",
