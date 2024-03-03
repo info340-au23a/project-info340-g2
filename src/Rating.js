@@ -1,38 +1,116 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Rating() {
+  const [name, setName] = useState('');
+  const [ynWifi, setYNWifi] = useState('');
+  const [ynOutlet, setYNOutlet] = useState('');
+  const [wifiRating, setWifiRating] = useState('');
+  const [outletRating, setOutletRating] = useState('');
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setShowConfirmation(true); // show confirmation message after form submission
+  };
+
+  const handleConfirmation = () => {
+    // Reset the form after submission
+    setName('');
+    setYNWifi('');
+    setYNOutlet('');
+    setWifiRating('');
+    setOutletRating('');
+    
+    setShowConfirmation(false); // hide confirmation message after confirmed
+  }
+
   return (
-    <main>
-
-      <form>
-        <label htmlFor="space-name">Space Name:</label><br />
-        <input type="text" id="space-name" name="space-name" /><br /><br />
-
-        <label htmlFor="yn-wifi">Does the space have wifi?</label><br />
-        <input type="radio" id="yes-wifi" name="yn-wifi" value="yes" />
-        <label htmlFor="yes-wifi">yes</label>
-        <input type="radio" id="no-wifi" name="yn-wifi" value="no" />
-        <label htmlFor="no-wifi">no</label><br />
-        <label htmlFor="wifi-rating">If so, please rank the wifi quality on a scale 
-          from 0-5, where 0 is the worst and 5 is the best.</label><br />
-        <input type="text" id="wifi-rating" name="wifi-rating" /><br /><br />
-
-        <label htmlFor="yn-outlet">Does the space have outlets?</label><br />
-        <input type="radio" id="yes-outlet" name="yn-outlet" value="yes" />
-        <label htmlFor="yes-outlet">yes</label>
-        <input type="radio" id="no-outlet" name="yn-outlet" value="no" />
-        <label htmlFor="no-outlet">no</label><br />
-        <label htmlFor="outlet-rating">If so, please rank the outlet availability and quality on a scale 
-          from 0-5, where 0 is the worst and 5 is the best.</label><br />
-        <input type="text" id="outlet-rating" name="outlet-rating" /><br /><br />
-
-        <label htmlFor="noise-rating">Finally, please rank the noise level of the space on a scale 
-          from 0-5, where 0 is the worst and 5 is the best.</label><br />
-        <input type="text" id="noise-rating" name="noise-rating" /><br /><br />
-
-        <input type="submit" value="Submit" /><br /><br />
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name of Study Den:
+          <input
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            required
+          />
+        </label>
+        <br />
+        <br />
+        <label>
+          Does this study den have wifi?:
+          <select
+            value={ynWifi}
+            onChange={(event) => setYNWifi(event.target.value)}
+            required
+          >
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+        <br />
+        <br />
+        {ynWifi === 'yes' && (
+          <label>
+            Rating:
+            <input
+              type="number"
+              min="1"
+              max="5"
+              value={wifiRating}
+              onChange={(event) => setWifiRating(event.target.value)}
+              required
+            />
+          </label>
+        )}
+        <br />
+        <br />
+        <label>
+          Does this study den have outlets?:
+          <select
+            value={ynOutlet}
+            onChange={(event) => setYNOutlet(event.target.value)}
+            required
+          >
+            <option value="">Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+        <br />
+        <br />
+        {ynOutlet === 'yes' && (
+          <label>
+            Please rank the accessibility of the outlets on a scale from 1-5 paws:
+            <input
+              type="number"
+              min="1"
+              max="5"
+              value={outletRating}
+              onChange={(event) => setOutletRating(event.target.value)}
+              required
+            />
+          </label>
+        )}
+        <br />
+        <br />
+        <button type="submit">Submit</button>
       </form>
-    </main>
+
+      {showConfirmation && (
+        <div>
+          <p>Study Space Name: {name}</p>
+          <p>Wifi?: {ynWifi}</p>
+          {ynWifi === 'yes' && <p>Rating: {wifiRating}</p>}
+          <p>Outlets?: {ynOutlet}</p>
+          {ynOutlet === 'yes' && <p>Rating: {outletRating}</p>}
+          <p>Is this information correct?</p>
+          <button onClick={handleConfirmation}>Confirm</button>
+        </div>
+      )}
+    </div>
   );
 }
 
