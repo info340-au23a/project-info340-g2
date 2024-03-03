@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import StudySpotCard from './StudySpotCard';
-import studySpacesData from './data/study-spaces-2024.json';
+import studySpacesData from '../data/study-spaces-2024.json';
 
 function Home({ studySpaces, addToPawsibilities}) {
     const [searchTerm, setSearchTerm] = useState('');
