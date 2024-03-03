@@ -13,7 +13,7 @@
       "wifi_rating": "It has strong wifi: 5/5 Paws",
       "outlet_spaces": "It has outlet spaces but limited: 3/5 Paws",
       "noise_rating": "3.5/5 Paws",
-      "image":"src/img/pop_health.jpg"
+      "image": "../img/pop_health.jpg"
     },
     {
       "name": "Cafe on the Ave",
@@ -21,7 +21,7 @@
       "wifi_rating": "It has wifi but limited: 3/5 Paws",
       "outlet_spaces": "It has outlet spaces but limited: 3/5 Paws",
       "noise_rating": "3/5 Paws",
-      "image":"src/img/cafe-on-the-ave.jpg"
+      "image":"../img/cafe-on-the-ave.jpg"
     },
     {
       "name": "Sip House",
@@ -29,7 +29,7 @@
       "wifi_rating": "It has good wifi: 4/5 Paws",
       "outlet_spaces": "It has outlet: 4/5 Paws",
       "noise_rating": "3/5 Paws",
-      "image":"src/img/siphouse.jpg"
+      "image":"../img/siphouse.jpg"
     },
     {
       "name": "Mary Gates Hall",
@@ -37,7 +37,7 @@
       "wifi_rating": "It has strong wifi: 5/5 Paws",
       "outlet_spaces": "It has very limited outlets: 2/5 Paws",
       "noise_rating": "4/5 Paws",
-      "image":"src/img/marygates.jpg"
+      "image":"../img/marygates.jpg"
     }
   ]
   
