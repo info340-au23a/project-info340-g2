@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 import Pawsibilities from './Pawsibilities';
 import Rating from './Rating';
 import Footer from './Footer';
-import studySpacesData from './data/study-spaces-2024.json';
+import studySpacesData from '../data/study-spaces-2024.json';
 
 const App = () => {
     const [pawsibilities, setPawsibilities] = useState([]);

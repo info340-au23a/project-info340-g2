@@ -7,10 +7,11 @@ function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton }) 
   
   return (
     <div className="card">
-      {/* <div className="image">
+      <div className="image">
         <img src={spot.image} alt={spot.name} />
-      </div> */}
+      </div>
       <div className="description">
+      <img src={spot.image} alt={spot.name} />
         <h2>{spot.name}</h2>
         <p>{spot.description}</p>
         <h3>Wifi Rating</h3>

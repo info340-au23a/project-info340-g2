@@ -18,19 +18,19 @@ function Navbar() {
       <div className='navIcons'>
         <Link to="/home" element={<Home />}>
             <div className='homeButton'>
-              <FontAwesomeIcon icon={faHome} className="home" size="3x" />
+              <FontAwesomeIcon icon={faHome} className="home" size="3x" title="Home"/>
               <p id="HomeText">Home</p>
             </div>
         </Link>
         <Link to="/pawsibilities" element={<Pawsibilities />}>
             <div className='pawButton'>
-              <FontAwesomeIcon icon={faPaw} className="paw" size="3x" />
+              <FontAwesomeIcon icon={faPaw} className="paw" size="3x" title="Pawsibilities"/>
               <p id="PawsText">Pawsibilities</p>
             </div>
         </Link>
         <Link to="/rating" element={<Rating />}>
             <div className='rateButton'>
-              <FontAwesomeIcon icon={faStar} className="star" size="3x"/>
+              <FontAwesomeIcon icon={faStar} className="star" size="3x" title="Rate"/>
               <p id="RateText">Rate</p>
             </div>
         </Link>

@@ -30,7 +30,7 @@ function SearchBar({ onSearchChange, onFilterChange }) {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <button onClick={handleSearch}>
-          <FontAwesomeIcon icon={faSearch} size="2x" />
+          <FontAwesomeIcon icon={faSearch} size="2x" title="Search"/>
         </button>
       </div>
       <div className="filter-container">

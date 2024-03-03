@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import StudySpotCard from './StudySpotCard';
-import studySpacesData from './data/study-spaces-2024.json';
+import studySpacesData from '../data/study-spaces-2024.json';
 
 function Home({ studySpaces, addToPawsibilities}) {
     const [searchTerm, setSearchTerm] = useState('');
@@ -63,6 +63,7 @@ function Home({ studySpaces, addToPawsibilities}) {
                             <StudySpotCard
                                 key={index}
                                 spot={spot}
+                                image={spot.image}
                                 name={spot.name}
                                 description={spot.description}
                                 wifiRating={spot.wifi_rating}
