@@ -181,7 +181,34 @@ img {
     margin-top: 1.5rem;
 }
 
-@media (min-width: 0px){
+.footer{
+    background-color: #dcbdf2;
+}
+
+.footerText {
+    color:#51289e;
+    padding-top: 0.5rem;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+}
+
+.image {
+    padding: 20px; 
+    width: 50%; 
+    text-align: center;
+    margin: 0 auto; 
+    margin-top: 2rem;
+}
+
+.description {
+    text-align: left;
+}
+
+@media (min-width: 598px){
     h1 {
         font-size: 1.5rem;
     }
@@ -189,17 +216,10 @@ img {
     h2 {
         font-size: 1.25rem;
     }
-
-    p#PawsText {
-        display: hidden;
-    }
-
-    p#RateText {
-        display: hidden;
-    }
-
-    p#HomeText {
-        display: hidden;
+}
+@media (max-width: 767px) {
+    .filterText {
+        display: none;
     }
 }
 @media (min-width: 768px){
@@ -222,10 +242,6 @@ img {
     p#HomeText {
         font-size: 1rem;
     }
-
-    /* nav img .rate {
-        right: 3rem;
-    } */
 
     .search-container{
         margin-top: 3rem;
@@ -259,28 +275,4 @@ img {
     .search-container{
         margin-top: 4rem;
     }
-}
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-
-}
-
-.image {
-    padding: 20px; 
-    width: 50%; 
-    text-align: center;
-    margin: 0 auto; 
-    margin-top: 2rem;
-}
-
-.description {
-    text-align: left;
-}
-
-.footer{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-
 }

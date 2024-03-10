@@ -34,7 +34,7 @@ function SearchBar({ onSearchChange, onFilterChange }) {
         </button>
       </div>
       <div className="filter-container">
-        <h3>Filter:</h3>
+        <h3 className="filterText">Filter:</h3>
         <div className="filter-options">
           <label>
             <input
