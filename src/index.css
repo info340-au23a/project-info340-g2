@@ -10,7 +10,7 @@ nav, h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
-    background-color: #dcbdf2;
+    background-color: #f4effa;
     border-radius: 25px;
     overflow: auto;
     display: flex;
@@ -152,8 +152,10 @@ td {
 }
 
 img {
-    max-width: 50%;
-    height: auto;
+    margin-top: 1rem;
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
 }
   
 .button-container {
@@ -191,19 +193,17 @@ img {
 }
 
 .card {
+<<<<<<< HEAD
     margin: 2rem auto 2rem auto;
     max-width: calc(100% - 80px);
+=======
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 1rem;
+>>>>>>> main
 
 }
 
-.image {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-}
 
 .description {
     text-align: left;
