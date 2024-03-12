@@ -1,20 +1,33 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import './popup.css'
 
-const Popup = ({ onClose }) => {
-    const history = useHistory();
-
-    const handleRate = () => {
-        history.push("/Rating.js")
-    };
+const Popup = ({ formData, onConfirm, onCancel }) => {
+    const {
+        studySpaces,
+        ynWifi,
+        ynOutlet,
+        wifiRating,
+        outletRating,
+        comment
+    } = formData;
+    
     return (
         <div className="popup">
             <div className="popup-content">
-                <span className="close" onClick={onClose}>&times;</span>
-                <p>Do you want to rate this location?</p>
-                <button onClick={handleRate}></button>
+                <p>Study Space Name: {studySpaces}</p>
 
+                <p>Wifi?: {ynWifi}</p>
+                {ynWifi === 'yes' && <p>Rating: {wifiRating}/5</p>}
+                
+                <p>Outlets?: {ynOutlet}</p>
+                {ynOutlet === 'yes' && <p>Rating: {outletRating}/5</p>}
+
+                {comment && <p>Comment: {comment}</p>}
+
+                <p>Are you ready to submit? Is this information correct?</p>
+                <button onClick={onConfirm}>Yes</button>
+                <button onClick={onCancel}>No</button>
             </div>
         </div>
     );
