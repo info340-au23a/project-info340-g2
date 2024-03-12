@@ -52,7 +52,7 @@ nav > div:nth-child(2) .nav-link {
 }
 
 nav a:hover {
-    color: #bd81f1;
+    color: #f4effa;
 }
 
 a[href] {
@@ -112,7 +112,7 @@ h2 {
 }
 
 .search-bar button:hover {
-    color: #bd81f1;
+    color: #f4effa;
 }
 
 .filter-container {
@@ -182,7 +182,7 @@ img {
 }
 
 .footer{
-    background-color: #dcbdf2;
+    background-color: #f4effa;
 }
 
 .footerText {
