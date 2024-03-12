@@ -198,11 +198,9 @@ img {
 }
 
 .image {
-    margin: 0;
+    margin-top: 1rem;
     padding: 20px;
-    overflow: hidden;
     max-width: 100%;
-    height: auto;
     border-radius: 20px 20px 0 0;
 }
 
