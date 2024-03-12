@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Popup from '../Popup';
+import { database } from '../index.js';
+import { ref } from 'firebase/database';
 
 function Rating() {
-  const [name, setName] = useState('');
+  const [studySpaces, setStudySpaces] = useState('');
   const [ynWifi, setYNWifi] = useState('');
   const [ynOutlet, setYNOutlet] = useState('');
   const [wifiRating, setWifiRating] = useState('');
   const [outletRating, setOutletRating] = useState('');
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const [picture, setPicture] = useState(null);
+  const [comment, setComment] = useState('');
 
   const studyDenNames = [
     "Suzzalo Library",
@@ -18,18 +20,35 @@ function Rating() {
     "Mary Gates Hall"
   ]
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setShowConfirmation(true); // show confirmation message after form submission
+
+    try {
+      await ref(database, 'wifiRatings').child(studySpaces).push({
+        rating: wifiRating,
+      });
+
+      await ref(database, 'outletRatings').child(studySpaces).push({
+        rating: outletRating,
+      });
+
+      await ref(database, 'comments').child(studySpaces).push({
+        comment: comment,
+      });
+
+      setShowConfirmation(true); // show confirmation message after form submission
+    } catch (error) {
+      console.error("Error submitting form data to Firebase: ", error);
+    }
   };
 
   const handleConfirmation = () => {
-    setName('');
+    setStudySpaces('');
     setYNWifi('');
     setYNOutlet('');
     setWifiRating('');
     setOutletRating('');
-    setPicture(null);
+    setComment('');
     
     setShowConfirmation(false); // hide confirmation message after confirmed
   }
@@ -44,8 +63,8 @@ function Rating() {
         <label>
           Name of Study Den:
           <select
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={studySpaces}
+            onChange={(event) => setStudySpaces(event.target.value)}
             required
           >
             <option value="">Select Study Den</option>
@@ -110,29 +129,30 @@ function Rating() {
             />
           </label>
         )}
-        <br />
-        <br />
-        <label>
-          Upload Picture (if you have):
-          <input
-            type="file"
-            onChange={(event) => setPicture(event.target.files[0])}
-            accept="image/*"
-          />
-        </label>
         <br /><br />
+
+        <label>Comment:</label>
+        <br />
+        <textarea
+          value={comment}
+          onChange={(event) => setComment(event.target.value)}
+          rows="4"
+          cols="50"
+        />
+        <br /><br />
+
         <button type="submit">Submit</button>
       </form>
 
       {showConfirmation && (
         <Popup
           formData={{
-            name,
+            studySpaces,
             ynWifi,
             ynOutlet,
             wifiRating,
             outletRating,
-            picture
+            comment
           }}
           onConfirm={handleConfirmation}
           onCancel={handleCancel}

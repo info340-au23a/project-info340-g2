@@ -5,13 +5,22 @@ import NavBar from './NavBar';
 import Pawsibilities from './Pawsibilities';
 import Rating from './Rating';
 import Footer from './Footer';
-import studySpacesData from '../data/study-spaces-2024.json';
+import { database } from '../index.js';
 
 const App = () => {
     const [pawsibilities, setPawsibilities] = useState([]);
+    const [studySpaces, setStudySpaces] = useState([]);
 
     useEffect(() => {
+        const fetchData = async () => {
+            const snapshot = await database.ref('studySpaces').once('value');
+            const data = snapshot.val();
+            if (data) {
+                setStudySpaces(Object.values(data));
+            }
+        };
 
+        fetchData();
     }, []);
     const markAsVisited = (spaceId) => {
         const updatedPaws = pawsibilities.map((space, index) => 
@@ -39,7 +48,7 @@ const App = () => {
                 <main>
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" />} />
-                        <Route path="/home" element={<Home studySpaces={studySpacesData} addToPawsibilities={addToPawsibilities} />}/>
+                        <Route path="/home" element={<Home studySpaces={studySpaces} addToPawsibilities={addToPawsibilities} />}/>
                         <Route path="/pawsibilities" element={<Pawsibilities pawsibilities={pawsibilities} markAsVisited={markAsVisited} />} />
                         <Route path="/rating" element={<Rating/>} />
                     </Routes>
