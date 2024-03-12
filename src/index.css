@@ -191,7 +191,7 @@ img {
 }
 
 .card {
-    margin: 2 rem auto;
+    margin: 2rem auto 2rem auto;
     max-width: calc(100% - 80px);
 
 }
@@ -207,6 +207,51 @@ img {
 
 .description {
     text-align: left;
+}
+
+.rate-form label {
+    color: #51289e;
+    font-family: 'Single Day', Arial;
+    margin-bottom: 1rem;
+}
+
+.rate-form select,
+.rate-form input[type="number"],
+.rate-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    color: #9e9b9b;
+}
+
+.rate-form select,
+.rate-form input[type="number"] {
+    width: 100%;
+    background-color: #f4effa;
+}
+
+.rate-form textarea {
+    width: 100%;
+    resize: vertical;
+    background-color: #f4effa;
+}
+
+.rate-form button[type="submit"] {
+    padding: 8px 16px;
+    background-color: #51289e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rate-form button[type="submit"]:hover {
+    background-color: #dcbdf2;
 }
 
 @media (min-width: 598px){
