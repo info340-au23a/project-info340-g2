@@ -59,7 +59,7 @@ function Rating() {
 
   return (
     <div className="card">
-      <form onSubmit={handleSubmit}>
+      <form className="rate-form" onSubmit={handleSubmit}>
         <label>
           Name of Study Den:
           <select
