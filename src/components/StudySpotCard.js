@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton }) {
+  const [added, setAdded] = useState(false); 
+  
   function handleAddToPawsibilities() {
     addToPawsibilities(spot);
+    setAdded(true); 
   };
-  
+
   return (
     <div className="card">
       <div className="image">
@@ -19,7 +22,9 @@ function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton }) 
         <p>{spot.outlet_spaces}</p>
         <h3>Noise Rating</h3>
         <p>{spot.noise_rating}</p>
-        <button onClick={handleAddToPawsibilities}>Add to Pawsibilities</button>
+        <button className={added ? "card-button added" : "card-button"} onClick={handleAddToPawsibilities}>
+          {added ? "Added to Pawsibilities" : "Add to Pawsibilities"}
+        </button>
         {showButton && <button onClick={() => markAsVisited(spot.id)}>Mark as Visited</button>}
       </div>
     </div>
