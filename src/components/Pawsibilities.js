@@ -19,7 +19,7 @@ function Pawsibilities({pawsibilities, markAsVisited}) {
           {pawsibilities.map((space, index) => (
             <tr key={index}>
               <td>
-                <img src={space.image} alt={space.name} />
+                <img className="pawsibilities-img" src={space.image} alt={space.name} />
                 <div className="button-container">
                 <button className="button" style={{ color: '#51289e' }} onClick={() => handleMarkAsVisited(index)}>Mark as Visited &#10024;</button>
                 </div>
