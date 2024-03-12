@@ -151,7 +151,7 @@ td {
     position: relative;
 }
 
-img {
+.card-img {
     margin-top: 1rem;
     padding: 20px;
     border-radius: 5px;
