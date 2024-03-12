@@ -48,7 +48,7 @@ const App = () => {
                 <main>
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" />} />
-                        <Route path="/home" element={<Home studySpaces={studySpaces} addToPawsibilities={addToPawsibilities} />}/>
+                        <Route path="/home" element={<Home studySpaces={studySpaces} addToPawsibilities={addToPawsibilities} showButton={true}/>}/>
                         <Route path="/pawsibilities" element={<Pawsibilities pawsibilities={pawsibilities} markAsVisited={markAsVisited} />} />
                         <Route path="/rating" element={<Rating/>} />
                     </Routes>
