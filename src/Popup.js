@@ -2,19 +2,39 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import './popup.css'
 
-const Popup = ({ onClose }) => {
-    const history = useHistory();
-
-    const handleRate = () => {
-        history.push("/Rating.js")
-    };
+const Popup = ({ formData, onConfirm, onCancel }) => {
+    const {
+        name,
+        ynWifi,
+        ynOutlet,
+        wifiRating,
+        outletRating,
+        picture
+    } = formData;
+    
     return (
         <div className="popup">
             <div className="popup-content">
-                <span className="close" onClick={onClose}>&times;</span>
-                <p>Do you want to rate this location?</p>
-                <button onClick={handleRate}></button>
+                <p>Study Space Name: {name}</p>
 
+                <p>Wifi?: {ynWifi}</p>
+                {ynWifi === 'yes' && <p>Rating: {wifiRating}/5</p>}
+                
+                <p>Outlets?: {ynOutlet}</p>
+                {ynOutlet === 'yes' && <p>Rating: {outletRating}/5</p>}
+
+                <p>Picture:</p>
+                {picture && (
+                    <div>
+                        <img src={URL.createObjectURL(picture)} alt="Uploaded" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+                    </div>
+                )}
+                <p>{picture ? picture.name : 'No picture uploaded'}</p>
+
+                <p>Are you ready to submit? Is this information correct?</p>
+                {/* <span className="close" onClick={onClose}>&times;</span> */}
+                <button onClick={onConfirm}>Yes</button>
+                <button onClick={onCancel}>No</button>
             </div>
         </div>
     );
