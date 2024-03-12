@@ -150,12 +150,6 @@ td {
     text-align: left;
     position: relative;
 }
-
-.card-img {
-    margin-top: 1rem;
-    padding: 20px;
-    border-radius: 5px;
-}
   
 .button-container {
     position: absolute;
@@ -195,7 +189,14 @@ td {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin-top: 1rem;
+}
 
+.image {
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 
