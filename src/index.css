@@ -150,13 +150,6 @@ td {
     text-align: left;
     position: relative;
 }
-
-img {
-    margin-top: 1rem;
-    padding: 20px;
-    max-width: 100%;
-    border-radius: 20px 20px 0 0;
-}
   
 .button-container {
     position: absolute;
@@ -200,8 +193,18 @@ img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin-top: 1rem;
+<<<<<<< HEAD
+>>>>>>> main
+=======
+}
 >>>>>>> main
 
+.image {
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 
