@@ -154,8 +154,7 @@ td {
 img {
     margin-top: 1rem;
     padding: 20px;
-    max-width: 100%;
-    border-radius: 20px 20px 0 0;
+    border-radius: 5px;
 }
   
 .button-container {
