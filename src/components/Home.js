@@ -3,11 +3,11 @@ import SearchBar from './SearchBar';
 import StudySpotCard from './StudySpotCard';
 import studySpacesData from '../data/study-spaces-2024.json';
 import Review from './Review';
-import { get, ref, onValue, push as firebasePush, runTransaction } from 'firebase/database';
+import { ref, onValue } from 'firebase/database';
 import { database } from '../index.js';
 
 
-function Home({ studySpaces, addToPawsibilities}) {
+function Home({ addToPawsibilities}) {
     const [reviews, setReviews] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filters, setFilters] = useState({
@@ -60,12 +60,12 @@ function Home({ studySpaces, addToPawsibilities}) {
     useEffect(() => {
         const reviewsRef = ref(database, 'reviews');
         onValue(reviewsRef, (snapshot) => {
-          const data = snapshot.val();
-          if (data) {
-            setReviews(Object.keys(data)); // Convert object keys to array of review IDs
-          }
+            const data = snapshot.val();
+            if (data) {
+                setReviews(Object.values(data)); // Convert object values to array of reviews
+            }
         });
-      }, []);
+    }, []);
 
     return (
         <div className="App">
@@ -89,16 +89,14 @@ function Home({ studySpaces, addToPawsibilities}) {
                         ))}
                     </div>
                 </div>
-                <div className="reviewContainer">
-                    {reviews.map((reviewId) => (
+                <div>
+                    {reviews.map((review, index) => (
                         <Review
-                            id={reviewId}
-                            key={reviewId}
-                            info={reviews.find(review => review.id === reviewId)}
+                            key={index}
+                            info={review}
                         />
                     ))}
                 </div>
-
             </main>
         </div>
     );

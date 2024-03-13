@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Popup from './Popup.js';
 import { database } from '../index.js';
-import { get, ref, onValue, push as firebasePush, runTransaction } from 'firebase/database';
+import { ref, push as firebasePush } from 'firebase/database';
 
 function Rating() {
   const [studySpace, setStudySpaces] = useState('');
@@ -25,7 +25,7 @@ function Rating() {
   const pushReview = () => {
     const review = {
         studySpace: studySpace, // name of study space
-        content: { wifiRating, outletRating }, // ratings for study space
+        content: { wifiRating, outletRating, ynWifi, ynOutlet }, // ratings for study space
         comment: comment // comment supplied by user
     };
 
