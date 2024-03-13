@@ -27,10 +27,8 @@ function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton}) {
         {showButton && !added && (
         <button className="card-button" onClick={handleAddToPawsibilities}>
           {added ? "Added to Pawsibilities" : "Add to Pawsibilities"}
-          showButton={false};
         </button>
         )}
-        {showButton && <button onClick={() => markAsVisited(spot.id)}>Mark as Visited</button>}
       </div>
     </div>
   );
