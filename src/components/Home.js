@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import StudySpotCard from './StudySpotCard';
 import studySpacesData from '../data/study-spaces-2024.json';
+import Review from './Review';
+import { get, ref, onValue, push as firebasePush, runTransaction } from 'firebase/database';
+import { database } from '../index.js';
+
 
 function Home({ studySpaces, addToPawsibilities}) {
+    const [reviews, setReviews] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filters, setFilters] = useState({
         wifi: false,
@@ -52,6 +57,15 @@ function Home({ studySpaces, addToPawsibilities}) {
 
     const filteredStudySpots = filterStudySpots(studySpacesData);
 
+    useEffect(() => {
+        const reviewsRef = ref(database, 'reviews');
+        onValue(reviewsRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            setReviews(Object.keys(data)); // Convert object keys to array of review IDs
+          }
+        });
+      }, []);
 
     return (
         <div className="App">
@@ -75,6 +89,16 @@ function Home({ studySpaces, addToPawsibilities}) {
                         ))}
                     </div>
                 </div>
+                <div className="reviewContainer">
+                    {reviews.map((reviewId) => (
+                        <Review
+                            id={reviewId}
+                            key={reviewId}
+                            info={reviews.find(review => review.id === reviewId)}
+                        />
+                    ))}
+                </div>
+
             </main>
         </div>
     );
