@@ -4,7 +4,7 @@ import { database } from '../index.js';
 import { get, ref, onValue, push as firebasePush, runTransaction } from 'firebase/database';
 
 function Rating() {
-  const [studySpaces, setStudySpaces] = useState('');
+  const [studySpace, setStudySpaces] = useState('');
   const [ynWifi, setYNWifi] = useState('');
   const [ynOutlet, setYNOutlet] = useState('');
   const [wifiRating, setWifiRating] = useState('');
@@ -24,7 +24,7 @@ function Rating() {
 
   const pushReview = () => {
     const review = {
-        studySpace: studySpaces, // name of study space
+        studySpace: studySpace, // name of study space
         content: { wifiRating, outletRating }, // ratings for study space
         comment: comment // comment supplied by user
     };
@@ -61,7 +61,7 @@ function Rating() {
         <label>
           Name of Study Den:
           <select
-            value={studySpaces}
+            value={studySpace}
             onChange={(event) => setStudySpaces(event.target.value)}
             required
           >
@@ -145,7 +145,7 @@ function Rating() {
       {showConfirmation && (
         <Popup
           formData={{
-            studySpaces,
+            studySpace,
             ynWifi,
             ynOutlet,
             wifiRating,
