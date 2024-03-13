@@ -26,8 +26,7 @@ function Rating() {
     const review = {
         studySpace: studySpaces, // name of study space
         content: { wifiRating, outletRating }, // ratings for study space
-        comment: comment, // comment supplied by user
-        likes: 0
+        comment: comment // comment supplied by user
     };
 
     firebasePush(reviewsRef, review)
