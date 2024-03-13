@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Popup from './Popup.js';
 import { database } from '../index.js';
-import { get, ref, onValue, push, runTransaction } from 'firebase/database';
+import { get, ref, onValue, push as firebasePush, runTransaction } from 'firebase/database';
 
 function Rating() {
   const [studySpaces, setStudySpaces] = useState('');
@@ -24,14 +24,13 @@ function Rating() {
 
   const pushReview = () => {
     const review = {
-        timestamp: database.serverValue.TIMESTAMP,
         studySpace: studySpaces, // name of study space
         content: { wifiRating, outletRating }, // ratings for study space
         comment: comment, // comment supplied by user
         likes: 0
     };
 
-    push(reviewsRef, review)
+    firebasePush(reviewsRef, review)
         .then(() => {
           setStudySpaces('');
           setYNWifi('');
@@ -46,24 +45,6 @@ function Rating() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setShowConfirmation(true); // show confirmation message after form submission
-
-    try {
-      await ref(database, 'wifiRatings').child(studySpaces).push({
-        rating: wifiRating,
-      });
-  
-      await ref(database, 'outletRatings').child(studySpaces).push({
-        rating: outletRating,
-      });
-  
-      await ref(database, 'comments').child(studySpaces).push({
-        comment: comment,
-      });
-  
-      setShowConfirmation(true); // show confirmation message after form submission
-    } catch (error) {
-      console.error("Error submitting form data to Firebase: ", error);
-    }
   };
 
   const handleConfirmation = () => {
@@ -74,7 +55,7 @@ function Rating() {
     // setWifiRating('');
     // setOutletRating('');
     // setComment('');
-    
+    pushReview();
     setShowConfirmation(false); // hide confirmation message after confirmed
   }
 
