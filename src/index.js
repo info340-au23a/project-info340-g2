@@ -15,7 +15,7 @@ const firebaseConfig = {
     messagingSenderId: "1060692712600",
     appId: "1:1060692712600:web:d6ad0c9ea0d24a9f6644ed",
     measurementId: "G-5PELZWX7Y0"
-  };
+};
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
@@ -23,7 +23,7 @@ const database = getDatabase(app);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<BrowserRouter><App /></BrowserRouter>);
 
-export { database };
+export { database , firebaseConfig};
 
 
 
