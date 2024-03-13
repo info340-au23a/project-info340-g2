@@ -5,19 +5,13 @@ import '../popup.css';
 
 function Pawsibilities({pawsibilities, markAsVisited}) { 
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedSpotIndex, setSelectedSpotIndex] = useState(null);
 
  const handleMarkAsVisited = (index) => {
     markAsVisited(index);
-    setSelectedSpotIndex(index);
     setShowPopup(true);
   };
 
   const handleClosePopup = () => {
-    setShowPopup(false);
-  };
-
-  const handleRatePopup = () => {
     setShowPopup(false);
   };
 

@@ -11,13 +11,13 @@ function Review(props) {
                     <strong>Review on {props.info.studySpace}</strong>
                 </div>
                 <div className="card-text">
-                    <p><a className="category">Wifi?:</a> {props.info.content.ynWifi}</p>
-                    {props.info.content.ynWifi === 'yes' && <p><a className="category">Wifi Rating:</a> {props.info.content.wifiRating}/5 Paws</p>}
+                    <p><div className="category">Wifi?</div> {props.info.content.ynWifi}</p>
+                    {props.info.content.ynWifi === 'yes' && <p><div className="category">Wifi Rating:</div> {props.info.content.wifiRating}/5 Paws</p>}
 
-                    <p><a className="category">Outlets?:</a> {props.info.content.ynOutlet}</p>
-                    {props.info.content.ynOutlet === 'yes' && <p><a className="category">Outlet Rating:</a> {props.info.content.outletRating}/5 Paws</p>}
+                    <p><div className="category">Outlets?</div> {props.info.content.ynOutlet}</p>
+                    {props.info.content.ynOutlet === 'yes' && <p><div className="category">Outlet Rating:</div> {props.info.content.outletRating}/5 Paws</p>}
 
-                    {props.info.comment && <p><a className="category">Comment:</a> <p/>{props.info.comment}</p>}
+                    {props.info.comment && <p><div className="category">Comment:</div> <p/>{props.info.comment}</p>}
                 </div>
             </div>
         </div>
