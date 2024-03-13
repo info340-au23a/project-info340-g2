@@ -13,7 +13,7 @@ function Rating() {
   const [comment, setComment] = useState('');
 
   const studyDenNames = [
-    "Suzzalo Library",
+    "Suzzallo Library",
     "Pop Health Building",
     "Cafe on the Ave",
     "Sip House",
@@ -22,20 +22,20 @@ function Rating() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
       await ref(database, 'wifiRatings').child(studySpaces).push({
         rating: wifiRating,
       });
-
+  
       await ref(database, 'outletRatings').child(studySpaces).push({
         rating: outletRating,
       });
-
+  
       await ref(database, 'comments').child(studySpaces).push({
         comment: comment,
       });
-
+  
       setShowConfirmation(true); // show confirmation message after form submission
     } catch (error) {
       console.error("Error submitting form data to Firebase: ", error);

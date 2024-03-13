@@ -49,8 +49,24 @@ function App () {
     
         fetchData();
     }, []);
-    
 
+    useEffect(() => {
+        const fetchSubmissions = () => {
+          const submissionsRef = ref(database, 'comments');
+          const unsubscribe = onValue(submissionsRef, (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+              setReviews(data);
+            }
+          });
+          return unsubscribe; // Return the unsubscribe function
+        };
+      
+        fetchSubmissions();
+      
+    }, []);
+      
+      
     const markAsVisited = (spaceId) => {
         const updatedPaws = pawsibilities.map((space, index) => 
             index === spaceId ? { ...space, visited: true } : space
@@ -70,12 +86,6 @@ function App () {
         }
     };
 
-
-    // firebase database code strongly referenced from day 19 of lecture
-    // reviewsRef.on('value', (snapshot) => {
-    //     let reviews = snapshot.val();
-    //     this.setState({reviews: reviews});
-    // });
 
     const pushReview = () => {
         const review = {
@@ -116,7 +126,7 @@ function App () {
                 <main>
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" />} />
-                        <Route path="/home" element={<Home studySpaces={studySpaces} addToPawsibilities={addToPawsibilities} showButton={true}/>}/>
+                        <Route path="/home" element={<Home studySpaces={studySpaces} addToPawsibilities={addToPawsibilities} showButton={true} reviews={reviews} />} />
                         <Route path="/pawsibilities" element={<Pawsibilities pawsibilities={pawsibilities} markAsVisited={markAsVisited} />} />
                         <Route path="/rating" element={<Rating/>} />
                     </Routes>
