@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-//import { useLocation } from 'react-router-dom';
 
 function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton}) {
-  const [added, setAdded] = useState(false); 
-  //const location = useLocation();
+  const [added, setAdded] = useState(false);
   
   function handleAddToPawsibilities() {
     addToPawsibilities(spot);
