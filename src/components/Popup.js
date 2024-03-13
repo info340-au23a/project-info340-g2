@@ -4,7 +4,7 @@ import '../popup.css'
 
 const Popup = ({ formData, onConfirm, onCancel }) => {
     const {
-        studySpaces,
+        studySpace,
         ynWifi,
         ynOutlet,
         wifiRating,
@@ -15,7 +15,7 @@ const Popup = ({ formData, onConfirm, onCancel }) => {
     return (
         <div className="popup">
             <div className="popup-content">
-                <p>Study Space Name: {studySpaces}</p>
+                <p>Study Space Name: {studySpace}</p>
 
                 <p>Wifi?: {ynWifi}</p>
                 {ynWifi === 'yes' && <p>Rating: {wifiRating}/5</p>}
