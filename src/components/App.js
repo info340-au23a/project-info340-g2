@@ -20,7 +20,6 @@ function App () {
     const [reviewComment, setReviewComment] = useState('');
     const [spaceName, setSpaceName] = useState('');
 
-    const reviewsRef = ref(database, 'reviews');
 
     // useEffect(() => {
     //     const fetchData = async () => {
@@ -86,20 +85,7 @@ function App () {
         }
     };
 
-
-    const pushReview = () => {
-        const review = {
-            timestamp: database.serverValue.TIMESTAMP,
-            studySpace: spaceName, // name of study space
-            content: reviewContent, // ratings for study space
-            comment: reviewComment, // comment supplied by user
-            likes: 0
-        };
-
-        push(reviewsRef, review)
-            .then(() => setReviewContent(''))
-            .catch((d) => console.log("error ", d));
-    }
+    
 
     const updateLikes = (reviewId) => {
         let likesRef = ref(database, `reviews/${reviewId}/likes`);

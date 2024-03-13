@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Popup from './Popup.js';
 import { database } from '../index.js';
-import { ref } from 'firebase/database';
+import { get, ref, onValue, push, runTransaction } from 'firebase/database';
 
 function Rating() {
   const [studySpaces, setStudySpaces] = useState('');
@@ -12,17 +12,41 @@ function Rating() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [comment, setComment] = useState('');
 
+  const reviewsRef = ref(database, 'reviews');
+
   const studyDenNames = [
     "Suzzallo Library",
     "Pop Health Building",
     "Cafe on the Ave",
     "Sip House",
     "Mary Gates Hall"
-  ]
+  ];
+
+  const pushReview = () => {
+    const review = {
+        timestamp: database.serverValue.TIMESTAMP,
+        studySpace: studySpaces, // name of study space
+        content: { wifiRating, outletRating }, // ratings for study space
+        comment: comment, // comment supplied by user
+        likes: 0
+    };
+
+    push(reviewsRef, review)
+        .then(() => {
+          setStudySpaces('');
+          setYNWifi('');
+          setYNOutlet('');
+          setWifiRating('');
+          setOutletRating('');
+          setComment('');          
+        })
+        .catch((d) => console.log("error ", d));
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+    setShowConfirmation(true); // show confirmation message after form submission
+
     try {
       await ref(database, 'wifiRatings').child(studySpaces).push({
         rating: wifiRating,
@@ -43,12 +67,13 @@ function Rating() {
   };
 
   const handleConfirmation = () => {
-    setStudySpaces('');
-    setYNWifi('');
-    setYNOutlet('');
-    setWifiRating('');
-    setOutletRating('');
-    setComment('');
+    // pushReview();
+    // setStudySpaces('');
+    // setYNWifi('');
+    // setYNOutlet('');
+    // setWifiRating('');
+    // setOutletRating('');
+    // setComment('');
     
     setShowConfirmation(false); // hide confirmation message after confirmed
   }
