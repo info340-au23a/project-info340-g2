@@ -5,14 +5,12 @@ import NavBar from './NavBar';
 import Pawsibilities from './Pawsibilities';
 import Rating from './Rating';
 import Footer from './Footer';
-import { database } from '../index.js';
 
-import { firebaseConfig } from './Config';
-import { getDatabase, ref, onValue, push, runTransaction } from 'firebase/database';
-import Review from '.Review';
+import { app, database } from './index.js';
+import { ref, onValue, push, runTransaction } from 'firebase/database';
+import Review from './Review';
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
+const db = database;
 const reviewsRef = ref(db, 'reviews');
 
 function App () {
@@ -57,16 +55,14 @@ function App () {
 
 
     // firebase database code strongly referenced from day 19 of lecture
-    this.reviewsRef = firebase.databse().ref('reviews');
-
-    this.reviewsRef.on('value', (snapshot) => {
+    reviewsRef.on('value', (snapshot) => {
         let reviews = snapshot.val();
         this.setState({reviews: reviews});
     });
 
     const pushReview = () => {
         const review = {
-            timestamp: firebase.database.serverValue.TIMESTAMP,
+            timestamp: db.serverValue.TIMESTAMP,
             studySpace: spaceName, // name of study space
             content: reviewContent, // ratings for study space
             comment: reviewComment, // comment supplied by user

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Popup from '../Popup';
-import { database } from '../index.js';
+import Popup from './Popup.js';
+import { database } from './index.js';
 import { ref } from 'firebase/database';
 
 function Rating() {
