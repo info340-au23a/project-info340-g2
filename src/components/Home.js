@@ -70,6 +70,7 @@ function Home({ studySpaces, addToPawsibilities}) {
                                 outletSpaces={spot.outlet_spaces}
                                 noiseRating={spot.noise_rating}
                                 addToPawsibilities={addToPawsibilities}
+                                showButton={true}
                             />
                         ))}
                     </div>

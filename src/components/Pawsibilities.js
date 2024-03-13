@@ -1,13 +1,14 @@
 import React from 'react';
+import StudySpotCard from './StudySpotCard';
 //import Popup from './Popup';
 
 function Pawsibilities({pawsibilities, markAsVisited}) { 
   //const [showPopup, setShowPopup] = useState(false);
 
-  const handleMarkAsVisited = (index) => {
-    markAsVisited(index);
+ //const handleMarkAsVisited = (index) => {
+  //  markAsVisited(index);
     //setShowPopup(true);
-  };
+ // };
 
   //const handleClosePopup = () => {
     //setShowPopup(false);
@@ -19,10 +20,12 @@ function Pawsibilities({pawsibilities, markAsVisited}) {
           {pawsibilities.map((space, index) => (
             <tr key={index}>
               <td>
-                <img className="pawsibilities-img" src={space.image} alt={space.name} />
-                <div className="button-container">
-                <button className="button" style={{ color: '#51289e' }} onClick={() => handleMarkAsVisited(index)}>Mark as Visited &#10024;</button>
-                </div>
+                <StudySpotCard
+                  spot={space}
+                  markAsVisited={() => markAsVisited(index)}
+                  showButton={false}
+                  />
+                 <button className="button" style={{ color: '#51289e' }} onClick={() => markAsVisited(index)}>Mark as Visited &#10024;</button>
               </td>
             </tr>
           ))}

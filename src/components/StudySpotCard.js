@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+//import { useLocation } from 'react-router-dom';
 
-function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton }) {
+function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton}) {
   const [added, setAdded] = useState(false); 
+  //const location = useLocation();
   
   function handleAddToPawsibilities() {
     addToPawsibilities(spot);
@@ -22,10 +24,11 @@ function StudySpotCard({ spot, addToPawsibilities, markAsVisited, showButton }) 
         <p>{spot.outlet_spaces}</p>
         <h3>Noise Rating</h3>
         <p>{spot.noise_rating}</p>
-        <button className={added ? "card-button added" : "card-button"} onClick={handleAddToPawsibilities}>
+        {showButton && !added && (
+        <button className="card-button" onClick={handleAddToPawsibilities}>
           {added ? "Added to Pawsibilities" : "Add to Pawsibilities"}
         </button>
-        {showButton && <button onClick={() => markAsVisited(spot.id)}>Mark as Visited</button>}
+        )}
       </div>
     </div>
   );
