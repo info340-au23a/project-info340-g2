@@ -48,13 +48,6 @@ function Rating() {
   };
 
   const handleConfirmation = () => {
-    // pushReview();
-    // setStudySpaces('');
-    // setYNWifi('');
-    // setYNOutlet('');
-    // setWifiRating('');
-    // setOutletRating('');
-    // setComment('');
     pushReview();
     setShowConfirmation(false); // hide confirmation message after confirmed
   }
