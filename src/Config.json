@@ -1,0 +1,12 @@
+{ "config": {
+    "firebaseConfig":  {
+        "apiKey": "AIzaSyDxwMjhfnPZGcQYH7fr4JOY8xM-2jptu1w",
+        "authDomain": "project-info340-g2.firebaseapp.com",
+        "databaseURL": "https://project-info340-g2-default-rtdb.firebaseio.com",
+        "projectId": "project-info340-g2",
+        "storageBucket": "project-info340-g2.appspot.com",
+        "messagingSenderId": "1060692712600",
+        "appId": "1:1060692712600:web:d6ad0c9ea0d24a9f6644ed",
+        "measurementId": "G-5PELZWX7Y0"
+    }
+}}
