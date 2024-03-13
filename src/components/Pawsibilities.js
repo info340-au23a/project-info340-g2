@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import StudySpotCard from './StudySpotCard';
 import { Link } from 'react-router-dom';
-import '../index.css';
+import '../css/index.css';
 
 function Pawsibilities({pawsibilities, markAsVisited}) { 
   const [showPopup, setShowPopup] = useState(false);
