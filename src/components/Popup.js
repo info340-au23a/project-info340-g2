@@ -1,6 +1,6 @@
 import React from "react";
 // import { useHistory } from "react-router-dom";
-import '../popup.css'
+import '../index.css'
 
 const Popup = ({ formData, onConfirm, onCancel }) => {
     const {

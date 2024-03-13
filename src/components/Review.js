@@ -1,7 +1,7 @@
 // this code heavily references Jacob's demo from day 19 
 
 import React from 'react';
-import '../Review.css';
+import '../index.css';
 
 function Review(props) {
     return (
