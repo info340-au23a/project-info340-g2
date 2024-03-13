@@ -6,7 +6,7 @@ import Pawsibilities from './Pawsibilities';
 import Rating from './Rating';
 import Footer from './Footer';
 
-import { app, database } from './index.js';
+import { app, database } from '../index.js';
 import { ref, onValue, push, runTransaction } from 'firebase/database';
 import Review from './Review';
 

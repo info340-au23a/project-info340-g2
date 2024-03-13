@@ -4,7 +4,7 @@ import { getDatabase } from 'firebase/database';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
 
 const firebaseConfig = {
