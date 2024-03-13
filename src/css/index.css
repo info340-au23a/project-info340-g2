@@ -610,3 +610,90 @@ img {
         margin-top: 4rem;
     }
 }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 2px solid #51289e;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .close-popup {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .close-button {
+    background-color: #51289e; /* Purple background color */
+    color: #ffffff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  .rate-button {
+    background-color: #51289e; /* Purple background color */
+    color: #ffffff !important; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove any text decoration */
+  }
+  
+  .rate-button:hover,
+  .close-button:hover {
+    background-color: #6f3cc5; /* Darker purple on hover */
+  }
+  
+  .review {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  
+  .review strong {
+    font-weight: bold;
+  }
+  
+  .review p {
+    margin: 5px 0;
+  }
+  
+  .review .card-body {
+    padding: 0;
+  }
+  
+  .review .card-title {
+    color: white;
+    background-color: #51289e;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .review .card-text {
+    padding: 10px;
+  }
+
+  .category {
+    color: #51289e;
+    padding: 0;
+  }
+  
