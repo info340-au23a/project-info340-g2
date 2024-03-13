@@ -7,9 +7,22 @@ import Rating from './Rating';
 import Footer from './Footer';
 import { database } from '../index.js';
 
-const App = () => {
+import { firebaseConfig } from './Config';
+import { getDatabase, ref, onValue, push, runTransaction } from 'firebase/database';
+import Review from '.Review';
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase();
+const reviewsRef = ref(db, 'reviews');
+
+function App () {
     const [pawsibilities, setPawsibilities] = useState([]);
     const [studySpaces, setStudySpaces] = useState([]);
+
+    const [reviews, setReviews] = useState({});
+    const [reviewContent, setReviewContent] = useState('');
+    const [reviewComment, setReviewComment] = useState('');
+    const [spaceName, setSpaceName] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,6 +35,7 @@ const App = () => {
 
         fetchData();
     }, []);
+
     const markAsVisited = (spaceId) => {
         const updatedPaws = pawsibilities.map((space, index) => 
             index === spaceId ? { ...space, visited: true } : space
@@ -42,6 +56,47 @@ const App = () => {
     };
 
 
+    // firebase database code strongly referenced from day 19 of lecture
+    this.reviewsRef = firebase.databse().ref('reviews');
+
+    this.reviewsRef.on('value', (snapshot) => {
+        let reviews = snapshot.val();
+        this.setState({reviews: reviews});
+    });
+
+    const pushReview = () => {
+        const review = {
+            timestamp: firebase.database.serverValue.TIMESTAMP,
+            studySpace: spaceName, // name of study space
+            content: reviewContent, // ratings for study space
+            comment: reviewComment, // comment supplied by user
+            likes: 0
+        };
+
+        push(reviewsRef, review)
+            .then(() => setReviewContent(''))
+            .catch((d) => console.log("error ", d));
+    }
+
+    const updateLikes = (reviewId) => {
+        let likesRef = ref(db, `reviews/${reviewId}/likes`);
+        console.log("the likes reference is:" + likesRef);
+        
+        runTransaction(likesRef, (currentLikes) => {
+          // If there are no current likes, set it to 1; otherwise, increment by 1
+          return (currentLikes + 1);
+        }).catch((error) => {
+          console.log('Error updating likes: ', error);
+        });
+    };
+
+
+
+    const sortedKeys = Object.keys(reviews).sort((a, b) => {
+        return reviews[b].timestamp - reviews[a].timestamp;
+    });
+
+
     return (
             <div className="App">
                 <NavBar />
@@ -57,5 +112,6 @@ const App = () => {
             </div>
     );
 };
+    
 
 export default App;

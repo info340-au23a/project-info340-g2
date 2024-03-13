@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
-import * as firebaseConfig from "./Config";
+import * as c from "./Config";
 
 // const firebaseConfig = {
 //     apiKey: "AIzaSyDxwMjhfnPZGcQYH7fr4JOY8xM-2jptu1w",
@@ -18,7 +18,7 @@ import * as firebaseConfig from "./Config";
 //     measurementId: "G-5PELZWX7Y0"
 //   };
 
-const app = initializeApp(firebaseConfig.config);
+const app = initializeApp(c.config);
 // const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
