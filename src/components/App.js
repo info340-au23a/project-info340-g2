@@ -1,3 +1,6 @@
+import { database } from '../index.js';
+import { get, ref, onValue, push, runTransaction } from 'firebase/database';
+
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from './Home';
@@ -5,13 +8,8 @@ import NavBar from './NavBar';
 import Pawsibilities from './Pawsibilities';
 import Rating from './Rating';
 import Footer from './Footer';
-
-import { app, database } from '../index.js';
-import { ref, onValue, push, runTransaction } from 'firebase/database';
 import Review from './Review';
 
-const db = database;
-const reviewsRef = ref(db, 'reviews');
 
 function App () {
     const [pawsibilities, setPawsibilities] = useState([]);
@@ -21,6 +19,8 @@ function App () {
     const [reviewContent, setReviewContent] = useState('');
     const [reviewComment, setReviewComment] = useState('');
     const [spaceName, setSpaceName] = useState('');
+
+    const reviewsRef = ref(database, 'reviews');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -55,14 +55,14 @@ function App () {
 
 
     // firebase database code strongly referenced from day 19 of lecture
-    reviewsRef.on('value', (snapshot) => {
-        let reviews = snapshot.val();
-        this.setState({reviews: reviews});
-    });
+    // reviewsRef.on('value', (snapshot) => {
+    //     let reviews = snapshot.val();
+    //     this.setState({reviews: reviews});
+    // });
 
     const pushReview = () => {
         const review = {
-            timestamp: db.serverValue.TIMESTAMP,
+            timestamp: database.serverValue.TIMESTAMP,
             studySpace: spaceName, // name of study space
             content: reviewContent, // ratings for study space
             comment: reviewComment, // comment supplied by user
@@ -75,7 +75,7 @@ function App () {
     }
 
     const updateLikes = (reviewId) => {
-        let likesRef = ref(db, `reviews/${reviewId}/likes`);
+        let likesRef = ref(database, `reviews/${reviewId}/likes`);
         console.log("the likes reference is:" + likesRef);
         
         runTransaction(likesRef, (currentLikes) => {
