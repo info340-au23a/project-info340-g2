@@ -66,6 +66,11 @@ a[href] {
     margin-top: 2rem;
 }
 
+.reviewText {
+    font-family: 'Single Day', Arial;
+    color:#51289e;
+}
+
 .search-container {
     background-color: #f4effa;
     border-radius: 25px;

@@ -8,7 +8,7 @@ function Review(props) {
         <Card className="review">
             <CardBody>
                 <CardTitle>
-                    <strong>Review on {props.info.studySpace}</strong>
+                    <strong className="reviewText">Review on {props.info.studySpace}</strong>
                 </CardTitle>
                 <CardText>
                     <p>Wifi?: {props.info.content.ynWifi}</p>
