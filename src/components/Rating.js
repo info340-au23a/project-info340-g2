@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Popup from '../Popup';
+import Popup from './Popup.js';
 import { database } from '../index.js';
-import { ref } from 'firebase/database';
+import { get, ref, onValue, push as firebasePush, runTransaction } from 'firebase/database';
 
 function Rating() {
-  const [studySpaces, setStudySpaces] = useState('');
+  const [studySpace, setStudySpaces] = useState('');
   const [ynWifi, setYNWifi] = useState('');
   const [ynOutlet, setYNOutlet] = useState('');
   const [wifiRating, setWifiRating] = useState('');
@@ -12,44 +12,42 @@ function Rating() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [comment, setComment] = useState('');
 
+  const reviewsRef = ref(database, 'reviews');
+
   const studyDenNames = [
-    "Suzzalo Library",
+    "Suzzallo Library",
     "Pop Health Building",
     "Cafe on the Ave",
     "Sip House",
     "Mary Gates Hall"
-  ]
+  ];
+
+  const pushReview = () => {
+    const review = {
+        studySpace: studySpace, // name of study space
+        content: { wifiRating, outletRating }, // ratings for study space
+        comment: comment // comment supplied by user
+    };
+
+    firebasePush(reviewsRef, review)
+        .then(() => {
+          setStudySpaces('');
+          setYNWifi('');
+          setYNOutlet('');
+          setWifiRating('');
+          setOutletRating('');
+          setComment('');          
+        })
+        .catch((d) => console.log("error ", d));
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    try {
-      await ref(database, 'wifiRatings').child(studySpaces).push({
-        rating: wifiRating,
-      });
-
-      await ref(database, 'outletRatings').child(studySpaces).push({
-        rating: outletRating,
-      });
-
-      await ref(database, 'comments').child(studySpaces).push({
-        comment: comment,
-      });
-
-      setShowConfirmation(true); // show confirmation message after form submission
-    } catch (error) {
-      console.error("Error submitting form data to Firebase: ", error);
-    }
+    setShowConfirmation(true); // show confirmation message after form submission
   };
 
   const handleConfirmation = () => {
-    setStudySpaces('');
-    setYNWifi('');
-    setYNOutlet('');
-    setWifiRating('');
-    setOutletRating('');
-    setComment('');
-    
+    pushReview();
     setShowConfirmation(false); // hide confirmation message after confirmed
   }
 
@@ -63,7 +61,7 @@ function Rating() {
         <label>
           Name of Study Den:
           <select
-            value={studySpaces}
+            value={studySpace}
             onChange={(event) => setStudySpaces(event.target.value)}
             required
           >
@@ -147,7 +145,7 @@ function Rating() {
       {showConfirmation && (
         <Popup
           formData={{
-            studySpaces,
+            studySpace,
             ynWifi,
             ynOutlet,
             wifiRating,
