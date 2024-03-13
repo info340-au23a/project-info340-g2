@@ -89,7 +89,7 @@ function Home({ addToPawsibilities}) {
                         ))}
                     </div>
                 </div>
-                <div className="reviewContainer">
+                <div>
                     {reviews.map((review, index) => (
                         <Review
                             key={index}

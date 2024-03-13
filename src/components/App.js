@@ -1,5 +1,5 @@
 import { database } from '../index.js';
-import { get, ref, onValue, push, runTransaction } from 'firebase/database';
+import { ref, onValue } from 'firebase/database';
 
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
@@ -8,30 +8,12 @@ import NavBar from './NavBar';
 import Pawsibilities from './Pawsibilities';
 import Rating from './Rating';
 import Footer from './Footer';
-import Review from './Review';
 
 
 function App () {
     const [pawsibilities, setPawsibilities] = useState([]);
     const [studySpaces, setStudySpaces] = useState([]);
-
     const [reviews, setReviews] = useState({});
-    const [reviewContent, setReviewContent] = useState('');
-    const [reviewComment, setReviewComment] = useState('');
-    const [spaceName, setSpaceName] = useState('');
-
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const snapshot = await database.ref('studySpaces').once('value');
-    //         const data = snapshot.val();
-    //         if (data) {
-    //             setStudySpaces(Object.values(data));
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, []);
 
     useEffect(() => {
         const fetchData = () => {
@@ -84,26 +66,6 @@ function App () {
             
         }
     };
-
-    
-
-    const updateLikes = (reviewId) => {
-        let likesRef = ref(database, `reviews/${reviewId}/likes`);
-        console.log("the likes reference is:" + likesRef);
-        
-        runTransaction(likesRef, (currentLikes) => {
-          // If there are no current likes, set it to 1; otherwise, increment by 1
-          return (currentLikes + 1);
-        }).catch((error) => {
-          console.log('Error updating likes: ', error);
-        });
-    };
-
-
-
-    const sortedKeys = Object.keys(reviews).sort((a, b) => {
-        return reviews[b].timestamp - reviews[a].timestamp;
-    });
 
 
     return (
