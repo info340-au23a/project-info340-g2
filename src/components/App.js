@@ -22,17 +22,34 @@ function App () {
 
     const reviewsRef = ref(database, 'reviews');
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const snapshot = await database.ref('studySpaces').once('value');
-            const data = snapshot.val();
-            if (data) {
-                setStudySpaces(Object.values(data));
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const snapshot = await database.ref('studySpaces').once('value');
+    //         const data = snapshot.val();
+    //         if (data) {
+    //             setStudySpaces(Object.values(data));
+    //         }
+    //     };
 
+    //     fetchData();
+    // }, []);
+
+    useEffect(() => {
+        const fetchData = () => {
+            const studySpacesRef = ref(database, 'studySpaces');
+            onValue(studySpacesRef, (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    setStudySpaces(Object.values(data));
+                }
+            }, {
+                onlyOnce: true // This ensures the callback is invoked only once
+            });
+        };
+    
         fetchData();
     }, []);
+    
 
     const markAsVisited = (spaceId) => {
         const updatedPaws = pawsibilities.map((space, index) => 
