@@ -1,0 +1,38 @@
+.review {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+  
+  .review strong {
+    font-weight: bold;
+  }
+  
+  .review p {
+    margin: 5px 0;
+  }
+  
+  .review .card-body {
+    padding: 0;
+  }
+  
+  .review .card-title {
+    color: white;
+    background-color: #51289e;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .review .card-text {
+    padding: 10px;
+  }
+
+  .category {
+    color: #51289e;
+  }
+  
